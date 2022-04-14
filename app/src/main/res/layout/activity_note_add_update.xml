@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NoteAddUpdateActivity"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        >
+
+        <!--Number Pole-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            >
+
+            <EditText
+                android:id="@+id/edt_no_pole"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/no_pole"
+                android:inputType="textCapSentences"
+                android:maxLines="1"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--Tipe Tiang-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            >
+
+            <EditText
+                android:id="@+id/edt_tipetiang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/tipetiang"
+                android:inputType="textCapSentences"
+                android:maxLines="1"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--Equipment tiang-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            >
+
+            <EditText
+                android:id="@+id/edt_poleequip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/poleequip"
+                android:inputType="textCapSentences"
+                android:maxLines="1"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--Ukuran Tiang-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            >
+
+            <EditText
+                android:id="@+id/edt_sizepole"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/sizepole"
+                android:inputType="textCapSentences"
+                android:maxLines="1"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--Jumlah Tiang-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            >
+
+            <EditText
+                android:id="@+id/edt_polecoord"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/polecoord"
+                android:inputType="textCapSentences"
+                android:maxLines="1"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--Tipe Guy Pole-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            >
+
+            <EditText
+                android:id="@+id/edt_guytype"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/guytype"
+                android:inputType="textCapSentences"
+                android:maxLines="1"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--Jumlah Guy Pole-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            >
+
+            <EditText
+                android:id="@+id/edt_guycoord"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/guy_coord"
+                android:inputType="textCapSentences"
+                android:maxLines="1"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--Well Yang Disupply-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            >
+
+            <EditText
+                android:id="@+id/edt_wellsupply"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/wellsupply"
+                android:inputType="textCapSentences"
+                android:maxLines="1"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--Fasilitas Yang Disupply-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            >
+
+            <EditText
+                android:id="@+id/edt_facsupply"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/facsupply"
+                android:inputType="textCapSentences"
+                android:maxLines="1"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--Tipe Tanah-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            >
+
+            <EditText
+                android:id="@+id/edt_groundtype"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/groundtype"
+                android:inputType="textCapSentences"
+                android:maxLines="1"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--Pole Guard-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            >
+
+            <EditText
+                android:id="@+id/edt_poleguard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/poleguard"
+                android:inputType="textCapSentences"
+                android:maxLines="1"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--Jumlah Cross Arm-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            >
+
+            <EditText
+                android:id="@+id/edt_totalcross"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/totalcross"
+                android:inputType="textCapSentences"
+                android:maxLines="1"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+        <!--Tipe Cross Arm-->
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            >
+
+            <EditText
+                android:id="@+id/edt_typecross"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/typecross"
+                android:inputType="textCapSentences"
+                android:maxLines="1"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--Pole Sleeve Bawah-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            >
+
+            <EditText
+                android:id="@+id/edt_pole_sleevebawah"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/pole_sleeve_bawah"
+                android:inputType="textCapSentences"
+                android:maxLines="1"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--Pole Sleeve Atas-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            >
+
+            <EditText
+                android:id="@+id/edt_pole_sleeveatas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/pole_sleeve_atas"
+                android:inputType="textCapSentences"
+                android:maxLines="1"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--Status Sleeve-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            >
+
+            <EditText
+                android:id="@+id/edt_statussleeve"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/statussleeve"
+                android:inputType="textCapSentences"
+                android:maxLines="1"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--Kondisi Lingkungan-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            >
+
+            <EditText
+                android:id="@+id/edt_envcond"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/envcond"
+                android:inputType="textCapSentences"
+                android:maxLines="1"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--Jarak Tiang Ke Jalan-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            >
+
+            <EditText
+                android:id="@+id/edt_jaraktiang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/jaraktiang"
+                android:inputType="textCapSentences"
+                android:maxLines="1"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--Deskripsi-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            >
+
+            <EditText
+                android:id="@+id/edt_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/description"
+                android:inputType="textCapSentences"
+                android:maxLines="1"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--Tombol Submit-->
+        <Button
+            android:id="@+id/btn_submit"
+            style="@style/Base.Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/submit"
+            />
+
+    </LinearLayout>
+
+</ScrollView>

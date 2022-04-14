@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">GeoForm</string>
+    <string name="no_pole">Number Pole</string>
+    <string name="description">Deskripsi</string>
+    <string name="submit">Submit</string>
+    <string name="delete">Hapus</string>
+    <string name="date">Date</string>
+    <string name="tipetiang">Tipe Tiang</string>
+    <string name="poleequip">Equipment Tiang</string>
+    <string name="sizepole">Ukuran Tiang</string>
+    <string name="polecoord">Jumlah Tiang (Single/Double/Triple)</string>
+    <string name="guytype">Tipe Guy Pole (Pipe/Pasak/Achor)</string>
+    <string name="guy_coord">Jumlah Guy Pole</string>
+    <string name="wellsupply">Well Yang di Supply</string>
+    <string name="facsupply">Fasilitas Yang di Supply</string>
+    <string name="groundtype">Tipe Tanah</string>
+    <string name="poleguard">Pole Guard (Ya/Tidak)</string>
+    <string name="totalcross">Jumlah Cross Arm</string>
+    <string name="typecross">Tipe Cross Arm</string>
+    <string name="pole_sleeve_bawah">Pole Sleeve Bawah (Ya/Tidak)</string>
+    <string name="pole_sleeve_atas">Pole Sleeve Atas (Ya/Tidak)</string>
+    <string name="statussleeve">Status Sleeve</string>
+    <string name="envcond">Kondisi Lingkungan</string>
+    <string name="jaraktiang">Jarak Tiang Ke Jalan</string>
+</resources>
