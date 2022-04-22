@@ -49,7 +49,7 @@ class NoteAdapter(private val onItemClickCallback: OnItemClickCallback) :
         private val binding = ItemNoteBinding.bind(itemView)
         fun bind(note: Note) {
             binding.tvItemTitle.text = note.nomor_pole
-            binding.tvItemDescription.text = note.tanggal
+            binding.tvItemDate.text = note.tanggal
             binding.tvItemDescription.text = note.deskripsi
             binding.cvItemNote.setOnClickListener {
                 onItemClickCallback.onItemClicked(note, adapterPosition)

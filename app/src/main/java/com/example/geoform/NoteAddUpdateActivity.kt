@@ -47,6 +47,8 @@ class NoteAddUpdateActivity : AppCompatActivity(), View.OnClickListener {
         if (note != null) {
             position = intent.getIntExtra(EXTRA_POSITION, 0)
             isEdit = true
+
+
             note?.let {
                 setFieldValue(it)
             }
@@ -126,7 +128,7 @@ class NoteAddUpdateActivity : AppCompatActivity(), View.OnClickListener {
             val data = getFieldValues()
 
             // Validasi
-            val isValid = data.validate()
+            val isValid = data.validate(this@NoteAddUpdateActivity)
             val noteId: Long = note?.id ?: 0
             data.id = noteId
             if (isValid.isError){

@@ -23,6 +23,27 @@
     <string name="envcond">Kondisi Lingkungan</string>
     <string name="jaraktiang">Jarak Tiang Ke Jalan</string>
 
+    <!--Header/title Variable-->
+    <string name="header_nomor_pole">Nomor Pole</string>
+    <string name="header_tipe_tiang">Tipe Tiang</string>
+    <string name="header_equipment_tiang">Equipment Tiang</string>
+    <string name="header_ukuran_tiang">Ukuran Tiang</string>
+    <string name="header_jumlah_tiang">Jumlah Tiang</string>
+    <string name="header_tipe_guy_pole">Tipe Guy Pole</string>
+    <string name="header_jumlah_guy_pole">Jumlah Guy Pole</string>
+    <string name="header_well_di_supply">Well Yang di Supply</string>
+    <string name="header_fasilitas_di_supply">Fasilitas yang di Supply</string>
+    <string name="header_tipe_tanah">Tipe Tanah</string>
+    <string name="header_pole_guard">Pole Guard</string>
+    <string name="header_jumlah_cross_arm">Jumlah Cross Arm</string>
+    <string name="header_tipe_cross_arm">Tipe Cross Arm</string>
+    <string name="header_pole_sleeve_bawah">Pole Sleeve Bawah</string>
+    <string name="header_pole_sleeve_atas">Pole Sleeve Atas</string>
+    <string name="header_status_sleeve">Status Sleeve</string>
+    <string name="header_kondisi_lingkungan">Kondisi Lingkungan</string>
+    <string name="header_jarak_tiang_ke_jalan">Jarak Tiangh ke Jalan</string>
+    <string name="header_deskripsi">Deskripsi</string>
+    <string name="header_tanggal">Tanggal</string>
 
 
     <!--Edit Text Hint-->
@@ -30,7 +51,7 @@
     <string name="hint_tipe_tiang">Tipe Tiang</string>
     <string name="hint_equipment_tiang">Equipment Tiang</string>
     <string name="hint_ukuran_tiang">Ukuran Tiang (Meter)</string>
-    <string name="hint_jumlah_tiang">Jumlah Tiang (Single/Double/Triple</string>
+    <string name="hint_jumlah_tiang">Jumlah Tiang (Single/Double/Triple)</string>
     <string name="hint_tipe_guy_pole">Tipe Guy Pole (Pipe/Pasak/Anchor)</string>
     <string name="hint_jumlah_guy_pole">Jumlah Guy Pole</string>
     <string name="hint_well_di_supply">Well Yang di Supply</string>
@@ -50,5 +71,10 @@
 
     <!--Title Menu-->
     <string name="title_menu_export_csv">Export CSV</string>
+
+    <!--Pesan Error-->
+    <string name="error_msg_field_empty">$ Tidak Boleh Kosong</string>
+    <string name="error_msg_field_empty_or_less_zero">$ Tidak Boleh Kosong atau Bernilai Minus</string>
+
 
 </resources>
