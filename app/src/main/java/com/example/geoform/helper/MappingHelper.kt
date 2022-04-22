@@ -12,7 +12,7 @@ object MappingHelper {
         notesCursor?.apply {
             while (moveToNext()) {
                 val note = Note(
-                    id                    = getInt(getColumnIndexOrThrow(NoteColumns.ID)),
+                    id                    = getLong(getColumnIndexOrThrow(NoteColumns.ID)),
                     nomor_pole            = getString(getColumnIndexOrThrow(NoteColumns.NOMOR_POLE)),
                     tipe_tiang            = getString(getColumnIndexOrThrow(NoteColumns.TIPE_TIANG)),
                     equipment_tiang       = getString(getColumnIndexOrThrow(NoteColumns.EQUIPMENT_TIANG)),

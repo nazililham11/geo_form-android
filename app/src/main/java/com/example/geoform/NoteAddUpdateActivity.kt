@@ -1,17 +1,14 @@
 package com.example.geoform
 
-import android.content.ContentValues
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.example.geoform.databinding.ActivityNoteAddUpdateBinding
-import com.example.geoform.db.DatabaseContract.NoteColumns
 import com.example.geoform.db.NoteHelper
 import com.example.geoform.entity.Note
 import java.text.SimpleDateFormat
@@ -97,6 +94,7 @@ class NoteAddUpdateActivity : AppCompatActivity(), View.OnClickListener {
         binding.etJarakTiangKeJalan.setText(note.jarak_tiang_ke_jalan.toString())
         binding.etDeskripsi.setText(note.deskripsi.trim())
     }
+
     private fun getFieldValues(): Note {
         // TODO: Tambahkan field tanggal
         return Note(
@@ -119,49 +117,91 @@ class NoteAddUpdateActivity : AppCompatActivity(), View.OnClickListener {
             kondisi_lingkungan 	 = binding.etKondisiLingkungan.text.toString().trim(),
             jarak_tiang_ke_jalan = binding.etJarakTiangKeJalan.text.toString().trim().toIntOrNull() ?: 0,
             deskripsi 			 = binding.etDeskripsi.text.toString().trim(),
+            tanggal              = getCurrentDate()
         )
     }
+
     override fun onClick(view: View) {
         if (view.id == R.id.btn_submit) {
-            var data = getFieldValues()
-            // TODO: Buat valiasi form
+            val data = getFieldValues()
 
-
-
+            // Validasi
+            val isValid = data.validate()
+            val noteId: Long = note?.id ?: 0
+            data.id = noteId
+            if (isValid.isError){
+                Toast.makeText(
+                    this@NoteAddUpdateActivity,
+                    isValid.errorMessage,
+                    Toast.LENGTH_LONG
+                ).show()
+                return
+            }
 
             if (isEdit) {
-                val result = noteHelper.update(note?.id.toString(), data).toLong()
-                if (result > 0) {
-                    val intent = Intent()
-                    intent.putExtra(EXTRA_NOTE, data)
-                    intent.putExtra(EXTRA_POSITION, position)
-                    setResult(RESULT_UPDATE, intent)
-                    finish()
-                } else {
+                if (noteId == 0L) {
                     Toast.makeText(
                         this@NoteAddUpdateActivity,
-                        "Gagal mengupdate data",
-                        Toast.LENGTH_SHORT
+                        "Gagal mendapatkan id",
+                        Toast.LENGTH_LONG
                     ).show()
+                    return
                 }
+                updateToDatabase(data)
             } else {
-                data.tanggal = getCurrentDate()
-                val result = noteHelper.insert(data)
-                if (result > 0) {
-                    val intent = Intent()
-                    intent.putExtra(EXTRA_NOTE, data)
-                    Log.d("DB:Insert-result", result.toString())
-//                    note?.id = result.toInt()
-                    setResult(RESULT_ADD, intent)
-                    finish()
-                } else {
-                    Toast.makeText(
-                        this@NoteAddUpdateActivity,
-                        "Gagal menambah data",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
+                insertToDatabase(data)
             }
+        }
+    }
+
+    private fun insertToDatabase(data: Note) {
+        data.tanggal = getCurrentDate()
+        val result = noteHelper.insert(data)
+        if (result > 0) {
+            data.id = result
+            val intent = Intent()
+            intent.putExtra(EXTRA_NOTE, data)
+            setResult(RESULT_ADD, intent)
+            finish()
+        } else {
+            Toast.makeText(
+                this@NoteAddUpdateActivity,
+                "Gagal menambah data",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+    }
+
+    private fun updateToDatabase(data: Note) {
+        val result = noteHelper.update(note?.id.toString(), data).toLong()
+        if (result > 0) {
+            val intent = Intent()
+            intent.putExtra(EXTRA_NOTE, data)
+            intent.putExtra(EXTRA_POSITION, position)
+            setResult(RESULT_UPDATE, intent)
+            finish()
+        } else {
+            Toast.makeText(
+                this@NoteAddUpdateActivity,
+                "Gagal mengupdate data",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+    }
+
+    private fun deleteDataInDatabase() {
+        val result = noteHelper.deleteById(note?.id.toString()).toLong()
+        if (result > 0) {
+            val intent = Intent()
+            intent.putExtra(EXTRA_POSITION, position)
+            setResult(RESULT_DELETE, intent)
+            finish()
+        } else {
+            Toast.makeText(
+                this@NoteAddUpdateActivity,
+                "Gagal menghapus data",
+                Toast.LENGTH_SHORT
+            ).show()
         }
     }
 
@@ -213,19 +253,7 @@ class NoteAddUpdateActivity : AppCompatActivity(), View.OnClickListener {
                 if (isDialogClose) {
                     finish()
                 } else {
-                    val result = noteHelper.deleteById(note?.id.toString()).toLong()
-                    if (result > 0) {
-                        val intent = Intent()
-                        intent.putExtra(EXTRA_POSITION, position)
-                        setResult(RESULT_DELETE, intent)
-                        finish()
-                    } else {
-                        Toast.makeText(
-                            this@NoteAddUpdateActivity,
-                            "Gagal menghapus data",
-                            Toast.LENGTH_SHORT
-                        ).show()
-                    }
+                    deleteDataInDatabase()
                 }
             }
             .setNegativeButton("Tidak") { dialog, _ -> dialog.cancel() }

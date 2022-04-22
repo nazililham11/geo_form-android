@@ -7,7 +7,7 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class Note(
     // ID [hidden]
-    var id: Int = 0,
+    var id: Long = 0,
     // Nomor Pole
     var nomor_pole: String = "",
     // Tipe Tiang
@@ -49,6 +49,94 @@ data class Note(
     // Tanggal
     var tanggal: String = "",
 ) : Parcelable {
+    fun validate() : ValidationResult{
+        when {
+            // Nomor Pole
+            this.nomor_pole.isBlank() -> {
+                return ValidationResult(true, "Nomor Poke Tidak Boleh Kosong")
+            }
+            // Tipe Tiang
+            this.tipe_tiang.isBlank() -> {
+                return ValidationResult(true, "Tipe Tiang Tidak Boleh Kosong")
+            }
+            // Equipment Tiang
+            this.equipment_tiang.isBlank() -> {
+                return ValidationResult(true, "Equipment Tiang Tidak Boleh Kosong")
+            }
+            // Ukuran Tiang (Meter)
+            this.ukuran_tiang <= 0 -> {
+                return ValidationResult(true, "Ukuran Tiang Tidak Boleh Nol Atau Bernilai Minus")
+            }
+            // Jumlah Tiang (Single/Double/Triple)
+            this.jumlah_tiang <= 0 -> {
+                return ValidationResult(true, "Jumlah Tiang Tidak Boleh Nol Atau Bernilai Minus")
+            }
+            // Tipe Guy Pole (Pipe/Pasak/Anchor)
+            this.tipe_guy_pole.isBlank() -> {
+                return ValidationResult(true, "Tipe Guy Pole Tidak Boleh Kosong")
+            }
+            // Jumlah Guy Pole
+            this.jumlah_guy_pole <= 0 -> {
+                return ValidationResult(true, "Jumlah Guy Pole Tidak Boleh Nol Atau Bernilai Minus")
+            }
+            // Well Yang di Supply
+            this.well_di_supply.isBlank() -> {
+                return ValidationResult(true, "Well Yang di Supply Tidak Boleh Kosong")
+            }
+            // Fasilitas yang di Supply
+            this.fasilitas_di_supply.isBlank() -> {
+                return ValidationResult(true, "Fasilitas yang di Supply Tidak Boleh Kosong")
+            }
+            // Tipe Tanah
+            this.tipe_tanah.isBlank() -> {
+                return ValidationResult(true, "Tipe Tanah Tidak Boleh Kosong")
+            }
+            // Pole Guard (Ya/Tidak)
+            this.pole_guard.isBlank() -> {
+                return ValidationResult(true, "Pole Guard Tidak Boleh Kosong")
+            }
+            // Jumlah Cross Arm
+            this.jumlah_cross_arm <= 0 -> {
+                return ValidationResult(true, "Jumlah Cross Arm Tidak Boleh Nol Atau Bernilai Minus")
+            }
+            // Tipe Cross Arm
+            this.tipe_cross_arm.isBlank() -> {
+                return ValidationResult(true, "Tipe Cross Arm Tidak Boleh Kosong")
+            }
+            // Pole Sleeve Bawah (Ya/Tidak)
+            this.pole_sleeve_bawah.isBlank() -> {
+                return ValidationResult(true, "Pole Sleeve Bawah Tidak Boleh Kosong")
+            }
+            // Pole Sleeve Atas (Ya/Tidak)
+            this.pole_sleeve_atas.isBlank() -> {
+                return ValidationResult(true, "Pole Sleeve Atas Tidak Boleh Kosong")
+            }
+            // Status Sleeve
+            this.status_sleeve.isBlank() -> {
+                return ValidationResult(true, "Status Sleeve Tidak Boleh Kosong")
+            }
+            // Kondisi Lingkungan
+            this.kondisi_lingkungan.isBlank() -> {
+                return ValidationResult(true, "Kondisi Lingkungan Tidak Boleh Kosong")
+            }
+            // Jarak Tiangh ke Jalan
+            this.jarak_tiang_ke_jalan <= 0 -> {
+                return ValidationResult(true, "Jarak Tiangh ke Jalan Tidak Boleh Nol Atau Bernilai Minus")
+            }
+            // Deskripsi
+            this.deskripsi.isBlank() -> {
+                return ValidationResult(true, "Deskripsi Tidak Boleh Kosong")
+            }
+            // Tanggal
+//            this.tanggal.isBlank() -> {
+//                return ValidationResult(true, "Tanggal Tidak Boleh Kosong")
+//            }
+            else -> {
+                return ValidationResult(false, "OK")
+            }
+        }
+    }
+
     fun getFieldTitle(): ArrayList<String> {
         return arrayListOf(
 //            "ID [hidden]",

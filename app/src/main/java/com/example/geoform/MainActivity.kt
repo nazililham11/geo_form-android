@@ -3,7 +3,6 @@ package com.example.geoform
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -12,15 +11,12 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.geoform.adapter.NoteAdapter
 import com.example.geoform.databinding.ActivityMainBinding
-import com.example.geoform.databinding.ActivityNoteAddUpdateBinding
 import com.example.geoform.db.NoteHelper
 import com.example.geoform.entity.Note
 import com.example.geoform.helper.ExcelExportHelper
 import com.example.geoform.helper.MappingHelper
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
