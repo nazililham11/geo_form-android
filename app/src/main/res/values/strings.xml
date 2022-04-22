@@ -7,7 +7,7 @@
     <string name="date">Date</string>
     <string name="tipetiang">Tipe Tiang</string>
     <string name="poleequip">Equipment Tiang</string>
-    <string name="sizepole">Ukuran Tiang</string>
+    <string name="sizepole">Ukuran Tiang (Meter)</string>
     <string name="polecoord">Jumlah Tiang (Single/Double/Triple)</string>
     <string name="guytype">Tipe Guy Pole (Pipe/Pasak/Achor)</string>
     <string name="guy_coord">Jumlah Guy Pole</string>
@@ -22,4 +22,33 @@
     <string name="statussleeve">Status Sleeve</string>
     <string name="envcond">Kondisi Lingkungan</string>
     <string name="jaraktiang">Jarak Tiang Ke Jalan</string>
+
+
+
+    <!--Edit Text Hint-->
+    <string name="hint_nomor_pole">Nomor Pole</string>
+    <string name="hint_tipe_tiang">Tipe Tiang</string>
+    <string name="hint_equipment_tiang">Equipment Tiang</string>
+    <string name="hint_ukuran_tiang">Ukuran Tiang (Meter)</string>
+    <string name="hint_jumlah_tiang">Jumlah Tiang (Single/Double/Triple</string>
+    <string name="hint_tipe_guy_pole">Tipe Guy Pole (Pipe/Pasak/Anchor)</string>
+    <string name="hint_jumlah_guy_pole">Jumlah Guy Pole</string>
+    <string name="hint_well_di_supply">Well Yang di Supply</string>
+    <string name="hint_fasilitas_di_supply">Fasilitas yang di Supply</string>
+    <string name="hint_tipe_tanah">Tipe Tanah</string>
+    <string name="hint_pole_guard">Pole Guard (Ya/Tidak)</string>
+    <string name="hint_jumlah_cross_arm">Jumlah Cross Arm</string>
+    <string name="hint_tipe_cross_arm">Tipe Cross Arm</string>
+    <string name="hint_pole_sleeve_bawah">Pole Sleeve Bawah (Ya/Tidak)</string>
+    <string name="hint_pole_sleeve_atas">Pole Sleeve Atas (Ya/Tidak)</string>
+    <string name="hint_status_sleeve">Status Sleeve</string>
+    <string name="hint_kondisi_lingkungan">Kondisi Lingkungan</string>
+    <string name="hint_jarak_tiang_ke_jalan">Jarak Tiangh ke Jalan</string>
+    <string name="hint_deskripsi">Deskripsi</string>
+    <string name="hint_tanggal">Tanggal</string>
+
+
+    <!--Title Menu-->
+    <string name="title_menu_export_csv">Export CSV</string>
+
 </resources>

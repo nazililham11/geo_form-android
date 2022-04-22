@@ -14,7 +14,7 @@
         android:padding="16dp"
         >
 
-        <!--Number Pole-->
+        <!--[String] Nomor Pole-->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -22,17 +22,20 @@
             >
 
             <EditText
-                android:id="@+id/edt_no_pole"
+                android:id="@+id/et_nomor_pole"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/no_pole"
+                android:hint="@string/hint_nomor_pole"
                 android:inputType="textCapSentences"
                 android:maxLines="1"
+                android:importantForAutofill="no"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!--Tipe Tiang-->
+
+
+        <!--[String] Tipe Tiang-->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -40,16 +43,20 @@
             >
 
             <EditText
-                android:id="@+id/edt_tipetiang"
+                android:id="@+id/et_tipe_tiang"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/tipetiang"
+                android:hint="@string/hint_tipe_tiang"
                 android:inputType="textCapSentences"
                 android:maxLines="1"
+                android:importantForAutofill="no"
                 />
+
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!--Equipment tiang-->
+
+
+        <!--[String] Equipment Tiang-->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -57,16 +64,20 @@
             >
 
             <EditText
-                android:id="@+id/edt_poleequip"
+                android:id="@+id/et_equipment_tiang"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/poleequip"
+                android:hint="@string/hint_equipment_tiang"
                 android:inputType="textCapSentences"
                 android:maxLines="1"
+                android:importantForAutofill="no"
                 />
+
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!--Ukuran Tiang-->
+
+
+        <!--[Number] Ukuran Tiang (Meter)-->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -74,16 +85,20 @@
             >
 
             <EditText
-                android:id="@+id/edt_sizepole"
+                android:id="@+id/et_ukuran_tiang"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/sizepole"
-                android:inputType="textCapSentences"
+                android:hint="@string/hint_ukuran_tiang"
+                android:inputType="textCapCharacters"
                 android:maxLines="1"
+                android:importantForAutofill="no"
                 />
+
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!--Jumlah Tiang-->
+
+
+        <!--[Number] Jumlah Tiang (Single/Double/Triple)-->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -91,16 +106,20 @@
             >
 
             <EditText
-                android:id="@+id/edt_polecoord"
+                android:id="@+id/et_jumlah_tiang"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/polecoord"
-                android:inputType="textCapSentences"
+                android:hint="@string/hint_jumlah_tiang"
+                android:inputType="number"
                 android:maxLines="1"
+                android:importantForAutofill="no"
                 />
+
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!--Tipe Guy Pole-->
+
+
+        <!--[String] Tipe Guy Pole (Pipe/Pasak/Anchor)-->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -108,16 +127,20 @@
             >
 
             <EditText
-                android:id="@+id/edt_guytype"
+                android:id="@+id/et_tipe_guy_pole"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/guytype"
+                android:hint="@string/hint_tipe_guy_pole"
                 android:inputType="textCapSentences"
                 android:maxLines="1"
+                android:importantForAutofill="no"
                 />
+
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!--Jumlah Guy Pole-->
+
+
+        <!--[Number] Jumlah Guy Pole-->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -125,16 +148,20 @@
             >
 
             <EditText
-                android:id="@+id/edt_guycoord"
+                android:id="@+id/et_jumlah_guy_pole"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/guy_coord"
-                android:inputType="textCapSentences"
+                android:hint="@string/hint_jumlah_guy_pole"
+                android:inputType="number"
                 android:maxLines="1"
+                android:importantForAutofill="no"
                 />
+
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!--Well Yang Disupply-->
+
+
+        <!--[String] Well Yang di Supply-->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -142,16 +169,20 @@
             >
 
             <EditText
-                android:id="@+id/edt_wellsupply"
+                android:id="@+id/et_well_di_supply"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/wellsupply"
+                android:hint="@string/hint_well_di_supply"
                 android:inputType="textCapSentences"
                 android:maxLines="1"
+                android:importantForAutofill="no"
                 />
+
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!--Fasilitas Yang Disupply-->
+
+
+        <!--[String] Fasilitas yang di Supply-->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -159,16 +190,20 @@
             >
 
             <EditText
-                android:id="@+id/edt_facsupply"
+                android:id="@+id/et_fasilitas_di_supply"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/facsupply"
+                android:hint="@string/hint_fasilitas_di_supply"
                 android:inputType="textCapSentences"
                 android:maxLines="1"
+                android:importantForAutofill="no"
                 />
+
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!--Tipe Tanah-->
+
+
+        <!--[String] Tipe Tanah-->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -176,16 +211,20 @@
             >
 
             <EditText
-                android:id="@+id/edt_groundtype"
+                android:id="@+id/et_tipe_tanah"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/groundtype"
+                android:hint="@string/hint_tipe_tanah"
                 android:inputType="textCapSentences"
                 android:maxLines="1"
+                android:importantForAutofill="no"
                 />
+
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!--Pole Guard-->
+
+
+        <!--[String] Pole Guard (Ya/Tidak)-->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -193,16 +232,20 @@
             >
 
             <EditText
-                android:id="@+id/edt_poleguard"
+                android:id="@+id/et_pole_guard"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/poleguard"
+                android:hint="@string/hint_pole_guard"
                 android:inputType="textCapSentences"
                 android:maxLines="1"
+                android:importantForAutofill="no"
                 />
+
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!--Jumlah Cross Arm-->
+
+
+        <!--[Number] Jumlah Cross Arm-->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -210,16 +253,20 @@
             >
 
             <EditText
-                android:id="@+id/edt_totalcross"
+                android:id="@+id/et_jumlah_cross_arm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/totalcross"
-                android:inputType="textCapSentences"
+                android:hint="@string/hint_jumlah_cross_arm"
+                android:inputType="number"
                 android:maxLines="1"
+                android:importantForAutofill="no"
                 />
-        </com.google.android.material.textfield.TextInputLayout>
-        <!--Tipe Cross Arm-->
 
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <!--[String] Tipe Cross Arm-->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -227,16 +274,20 @@
             >
 
             <EditText
-                android:id="@+id/edt_typecross"
+                android:id="@+id/et_tipe_cross_arm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/typecross"
+                android:hint="@string/hint_tipe_cross_arm"
                 android:inputType="textCapSentences"
                 android:maxLines="1"
+                android:importantForAutofill="no"
                 />
+
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!--Pole Sleeve Bawah-->
+
+
+        <!--[String] Pole Sleeve Bawah (Ya/Tidak)-->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -244,16 +295,20 @@
             >
 
             <EditText
-                android:id="@+id/edt_pole_sleevebawah"
+                android:id="@+id/et_pole_sleeve_bawah"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/pole_sleeve_bawah"
+                android:hint="@string/hint_pole_sleeve_bawah"
                 android:inputType="textCapSentences"
                 android:maxLines="1"
+                android:importantForAutofill="no"
                 />
+
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!--Pole Sleeve Atas-->
+
+
+        <!--[String] Pole Sleeve Atas (Ya/Tidak)-->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -261,16 +316,20 @@
             >
 
             <EditText
-                android:id="@+id/edt_pole_sleeveatas"
+                android:id="@+id/et_pole_sleeve_atas"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/pole_sleeve_atas"
+                android:hint="@string/hint_pole_sleeve_atas"
                 android:inputType="textCapSentences"
                 android:maxLines="1"
+                android:importantForAutofill="no"
                 />
+
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!--Status Sleeve-->
+
+
+        <!--[String] Status Sleeve-->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -278,16 +337,20 @@
             >
 
             <EditText
-                android:id="@+id/edt_statussleeve"
+                android:id="@+id/et_status_sleeve"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/statussleeve"
+                android:hint="@string/hint_status_sleeve"
                 android:inputType="textCapSentences"
                 android:maxLines="1"
+                android:importantForAutofill="no"
                 />
+
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!--Kondisi Lingkungan-->
+
+
+        <!--[String] Kondisi Lingkungan-->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -295,16 +358,20 @@
             >
 
             <EditText
-                android:id="@+id/edt_envcond"
+                android:id="@+id/et_kondisi_lingkungan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/envcond"
+                android:hint="@string/hint_kondisi_lingkungan"
                 android:inputType="textCapSentences"
                 android:maxLines="1"
+                android:importantForAutofill="no"
                 />
+
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!--Jarak Tiang Ke Jalan-->
+
+
+        <!--[Number] Jarak Tiangh ke Jalan-->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -312,16 +379,20 @@
             >
 
             <EditText
-                android:id="@+id/edt_jaraktiang"
+                android:id="@+id/et_jarak_tiang_ke_jalan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/jaraktiang"
-                android:inputType="textCapSentences"
+                android:hint="@string/hint_jarak_tiang_ke_jalan"
+                android:inputType="number"
                 android:maxLines="1"
+                android:importantForAutofill="no"
                 />
+
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!--Deskripsi-->
+
+
+        <!--[String] Deskripsi-->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -329,14 +400,23 @@
             >
 
             <EditText
-                android:id="@+id/edt_description"
+                android:id="@+id/et_deskripsi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/description"
+                android:hint="@string/hint_deskripsi"
                 android:inputType="textCapSentences"
                 android:maxLines="1"
+                android:importantForAutofill="no"
                 />
+
         </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <!--[Date] Tanggal-->
+
+
+
 
         <!--Tombol Submit-->
         <Button
