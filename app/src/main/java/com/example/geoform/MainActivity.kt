@@ -17,6 +17,7 @@ import com.example.geoform.db.NoteHelper
 import com.example.geoform.entity.Note
 import com.example.geoform.helper.ExcelExportHelper
 import com.example.geoform.helper.MappingHelper
+import com.example.geoform.helper.NoteUtils
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
@@ -150,10 +151,13 @@ class MainActivity : AppCompatActivity() {
             val data = adapter.listNotes
             val converted = ArrayList<ArrayList<String>>()
             for (note in data){
-                converted.add(note.toArrayListOfString())
+                converted.add(NoteUtils().toArrayListOfString(note))
             }
-            ExcelExportHelper().write(this@MainActivity, Note().getFieldTitle(), converted)
-            Toast.makeText(this, "Export Berhasil", Toast.LENGTH_LONG).show()
+            val result = ExcelExportHelper().write(this@MainActivity, NoteUtils().getFieldTitle(), converted)
+            if (result != null) {
+                Toast.makeText(this, "Export Berhasil", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Lokasi file \"${result}\"", Toast.LENGTH_LONG).show()
+            }
             return true
         }
 

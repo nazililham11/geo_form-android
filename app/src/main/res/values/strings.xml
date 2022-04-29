@@ -5,23 +5,6 @@
     <string name="submit">Submit</string>
     <string name="delete">Hapus</string>
     <string name="date">Date</string>
-    <string name="tipetiang">Tipe Tiang</string>
-    <string name="poleequip">Equipment Tiang</string>
-    <string name="sizepole">Ukuran Tiang (Meter)</string>
-    <string name="polecoord">Jumlah Tiang (Single/Double/Triple)</string>
-    <string name="guytype">Tipe Guy Pole (Pipe/Pasak/Achor)</string>
-    <string name="guy_coord">Jumlah Guy Pole</string>
-    <string name="wellsupply">Well Yang di Supply</string>
-    <string name="facsupply">Fasilitas Yang di Supply</string>
-    <string name="groundtype">Tipe Tanah</string>
-    <string name="poleguard">Pole Guard (Ya/Tidak)</string>
-    <string name="totalcross">Jumlah Cross Arm</string>
-    <string name="typecross">Tipe Cross Arm</string>
-    <string name="pole_sleeve_bawah">Pole Sleeve Bawah (Ya/Tidak)</string>
-    <string name="pole_sleeve_atas">Pole Sleeve Atas (Ya/Tidak)</string>
-    <string name="statussleeve">Status Sleeve</string>
-    <string name="envcond">Kondisi Lingkungan</string>
-    <string name="jaraktiang">Jarak Tiang Ke Jalan</string>
 
     <!--Header/title Variable-->
     <string name="header_nomor_pole">Nomor Pole</string>
@@ -43,7 +26,6 @@
     <string name="header_kondisi_lingkungan">Kondisi Lingkungan</string>
     <string name="header_jarak_tiang_ke_jalan">Jarak Tiangh ke Jalan</string>
     <string name="header_deskripsi">Deskripsi</string>
-    <string name="header_tanggal">Tanggal</string>
 
 
     <!--Edit Text Hint-->
@@ -64,9 +46,8 @@
     <string name="hint_pole_sleeve_atas">Pole Sleeve Atas (Ya/Tidak)</string>
     <string name="hint_status_sleeve">Status Sleeve</string>
     <string name="hint_kondisi_lingkungan">Kondisi Lingkungan</string>
-    <string name="hint_jarak_tiang_ke_jalan">Jarak Tiangh ke Jalan</string>
+    <string name="hint_jarak_tiang_ke_jalan">Jarak Tiangh ke Jalan (Meter)</string>
     <string name="hint_deskripsi">Deskripsi</string>
-    <string name="hint_tanggal">Tanggal</string>
 
 
     <!--Title Menu-->
@@ -74,7 +55,6 @@
 
     <!--Pesan Error-->
     <string name="error_msg_field_empty">$ Tidak Boleh Kosong</string>
-    <string name="error_msg_field_empty_or_less_zero">$ Tidak Boleh Kosong atau Bernilai Minus</string>
 
 
 </resources>

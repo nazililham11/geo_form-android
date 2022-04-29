@@ -11,6 +11,7 @@ import androidx.appcompat.app.AlertDialog
 import com.example.geoform.databinding.ActivityNoteAddUpdateBinding
 import com.example.geoform.db.NoteHelper
 import com.example.geoform.entity.Note
+import com.example.geoform.helper.NoteUtils
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -79,21 +80,21 @@ class NoteAddUpdateActivity : AppCompatActivity(), View.OnClickListener {
         binding.etNomorPole.setText(note.nomor_pole.trim())
         binding.etTipeTiang.setText(note.tipe_tiang.trim())
         binding.etEquipmentTiang.setText(note.equipment_tiang.trim())
-        binding.etUkuranTiang.setText(note.ukuran_tiang.toString())
-        binding.etJumlahTiang.setText(note.jumlah_tiang.toString())
+        binding.etUkuranTiang.setText(note.ukuran_tiang)
+        binding.etJumlahTiang.setText(note.jumlah_tiang)
         binding.etTipeGuyPole.setText(note.tipe_guy_pole.trim())
-        binding.etJumlahGuyPole.setText(note.jumlah_guy_pole.toString())
+        binding.etJumlahGuyPole.setText(note.jumlah_guy_pole)
         binding.etWellDiSupply.setText(note.well_di_supply.trim())
         binding.etFasilitasDiSupply.setText(note.fasilitas_di_supply.trim())
         binding.etTipeTanah.setText(note.tipe_tanah.trim())
         binding.etPoleGuard.setText(note.pole_guard.trim())
-        binding.etJumlahCrossArm.setText(note.jumlah_cross_arm.toString())
+        binding.etJumlahCrossArm.setText(note.jumlah_cross_arm)
         binding.etTipeCrossArm.setText(note.tipe_cross_arm.trim())
         binding.etPoleSleeveBawah.setText(note.pole_sleeve_bawah.trim())
         binding.etPoleSleeveAtas.setText(note.pole_sleeve_atas.trim())
         binding.etStatusSleeve.setText(note.status_sleeve.trim())
         binding.etKondisiLingkungan.setText(note.kondisi_lingkungan.trim())
-        binding.etJarakTiangKeJalan.setText(note.jarak_tiang_ke_jalan.toString())
+        binding.etJarakTiangKeJalan.setText(note.jarak_tiang_ke_jalan)
         binding.etDeskripsi.setText(note.deskripsi.trim())
     }
 
@@ -103,21 +104,21 @@ class NoteAddUpdateActivity : AppCompatActivity(), View.OnClickListener {
             nomor_pole 			 = binding.etNomorPole.text.toString().trim(),
             tipe_tiang 			 = binding.etTipeTiang.text.toString().trim(),
             equipment_tiang 	 = binding.etEquipmentTiang.text.toString().trim(),
-            ukuran_tiang 		 = binding.etUkuranTiang.text.toString().trim().toIntOrNull() ?: 0,
-            jumlah_tiang 		 = binding.etJumlahTiang.text.toString().trim().toIntOrNull() ?: 0,
+            ukuran_tiang 		 = binding.etUkuranTiang.text.toString().trim(),
+            jumlah_tiang 		 = binding.etJumlahTiang.text.toString().trim(),
             tipe_guy_pole 		 = binding.etTipeGuyPole.text.toString().trim(),
-            jumlah_guy_pole 	 = binding.etJumlahGuyPole.text.toString().trim().toIntOrNull() ?: 0,
+            jumlah_guy_pole 	 = binding.etJumlahGuyPole.text.toString().trim(),
             well_di_supply 		 = binding.etWellDiSupply.text.toString().trim(),
             fasilitas_di_supply  = binding.etFasilitasDiSupply.text.toString().trim(),
             tipe_tanah 			 = binding.etTipeTanah.text.toString().trim(),
             pole_guard 			 = binding.etPoleGuard.text.toString().trim(),
-            jumlah_cross_arm 	 = binding.etJumlahCrossArm.text.toString().trim().toIntOrNull() ?: 0,
+            jumlah_cross_arm 	 = binding.etJumlahCrossArm.text.toString().trim(),
             tipe_cross_arm 		 = binding.etTipeCrossArm.text.toString().trim(),
             pole_sleeve_bawah 	 = binding.etPoleSleeveBawah.text.toString().trim(),
             pole_sleeve_atas 	 = binding.etPoleSleeveAtas.text.toString().trim(),
             status_sleeve 		 = binding.etStatusSleeve.text.toString().trim(),
             kondisi_lingkungan 	 = binding.etKondisiLingkungan.text.toString().trim(),
-            jarak_tiang_ke_jalan = binding.etJarakTiangKeJalan.text.toString().trim().toIntOrNull() ?: 0,
+            jarak_tiang_ke_jalan = binding.etJarakTiangKeJalan.text.toString().trim(),
             deskripsi 			 = binding.etDeskripsi.text.toString().trim(),
             tanggal              = getCurrentDate()
         )
@@ -128,7 +129,7 @@ class NoteAddUpdateActivity : AppCompatActivity(), View.OnClickListener {
             val data = getFieldValues()
 
             // Validasi
-            val isValid = data.validate(this@NoteAddUpdateActivity)
+            val isValid = NoteUtils().validate(data, this@NoteAddUpdateActivity)
             val noteId: Long = note?.id ?: 0
             data.id = noteId
             if (isValid.isError){
