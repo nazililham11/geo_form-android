@@ -1,6 +1,9 @@
 package com.example.geoform
 
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -9,6 +12,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.geoform.adapter.NoteAdapter
@@ -32,6 +36,7 @@ class MainActivity : AppCompatActivity() {
     }
     private lateinit var binding: ActivityMainBinding
     private lateinit var adapter: NoteAdapter
+    private val PERMISSION_CODE = 1000
 
     val resultLauncher: ActivityResultLauncher<Intent> = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
@@ -85,7 +90,6 @@ class MainActivity : AppCompatActivity() {
             val list = savedInstanceState.getParcelableArrayList<Note>(EXTRA_STATE)
             if (list != null) adapter.listNotes = list
         }
-
     }
 
     private fun initRecyclerView(){
@@ -148,22 +152,55 @@ class MainActivity : AppCompatActivity() {
         val id = item.itemId
 
         if (id == R.id.export_csv) {
-            val data = adapter.listNotes
-            val converted = ArrayList<ArrayList<String>>()
-            for (note in data){
-                converted.add(NoteUtils().toArrayListOfString(note))
+            val permission = permissionCheck()
+            if (permission) {
+                return exportData()
             }
-            val result = ExcelExportHelper().write(this@MainActivity, NoteUtils().getFieldTitle(), converted)
-            if (result != null) {
-                Toast.makeText(this, "Export Berhasil", Toast.LENGTH_LONG).show()
-                Toast.makeText(this, "Lokasi file \"${result}\"", Toast.LENGTH_LONG).show()
-            }
-            return true
         }
-
 
         return super.onOptionsItemSelected(item)
 
     }
 
+    private fun exportData(): Boolean {
+        val data = adapter.listNotes
+        val converted = ArrayList<ArrayList<String>>()
+        for (note in data) {
+            converted.add(NoteUtils().toArrayListOfString(note))
+        }
+        val headers = NoteUtils().getFieldTitle()
+        val result = ExcelExportHelper().write(headers, converted)
+        if (result != null) {
+            Toast.makeText(this, "Export Berhasil", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "Lokasi file \"${result}\"", Toast.LENGTH_LONG).show()
+            return true
+        }
+        return false
+    }
+
+    private fun permissionCheck(): Boolean {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED) {
+                val permission = arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                requestPermissions(permission, PERMISSION_CODE)
+                return false
+            }
+        }
+        return true
+    }
+
+    private fun onStoragePermissionResult(requestCode: Int, grantResults: IntArray) {
+        if (requestCode == PERMISSION_CODE){
+            if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                exportData()
+            } else {
+                Toast.makeText(this, "Permission Denied", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        onStoragePermissionResult(requestCode, grantResults)
+    }
 }

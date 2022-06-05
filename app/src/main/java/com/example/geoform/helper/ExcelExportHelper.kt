@@ -1,17 +1,18 @@
 package com.example.geoform.helper
 
-import android.content.Context
+import android.os.Environment
 import com.opencsv.CSVWriter
 import java.io.File
 import java.io.FileWriter
 import java.io.IOException
 
 class ExcelExportHelper {
-
-    fun write(context: Context, headers: ArrayList<String>, data: ArrayList<ArrayList<String>>): String? {
+    fun write(headers: ArrayList<String>, data: ArrayList<ArrayList<String>>): String? {
         var result: String?
         try {
-            val file = File(context.getExternalFilesDir(null), "export.csv")
+            val fileName = "export.csv"
+            val basePath = Environment.getExternalStorageDirectory()?.absolutePath
+            val file = File(basePath, fileName)
             val outputfile = FileWriter(file)
             result = file.absolutePath
             val writer = CSVWriter(outputfile)
@@ -29,5 +30,4 @@ class ExcelExportHelper {
         }
         return result
     }
-
 }
